@@ -2,10 +2,10 @@ import React, {Component} from 'react'
 
 class Card extends Component {
 
-    constructor(){
-        super()
+    constructor(props){
+        super(props)
         this.state ={
-            valor:''
+            
         }
     }
    
@@ -22,9 +22,9 @@ class Card extends Component {
                 <i className="far fa-window-close"></i>
             </section>
             <main>
-                <img src="./img/image-default.png" alt=""/>
-                <h3>Título/ Nombre</h3>
-                <p className="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint cumque velit minus facere laboriosam voluptatem impedit ea unde labore optio eius quis, dignissimos expedita. Culpa, soluta perspiciatis! Sint, laboriosam cum.</p>
+                <img src={this.props.dataMovie.backdrop_path} alt=""/>
+                <h3>{this.props.dataMovie.title}</h3>
+                <p className="description">{this.props.dataMovie.overview}</p>
                 <section className="aditional-info">
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse qui atque.</p>
