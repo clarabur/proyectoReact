@@ -29,7 +29,7 @@ class Cards extends Component {
 
             <main>
             <button type="button">Cargar más tarjetas</button>
-            <section class="card-container">
+            <section className="card-container">
                 {this.state.movies.map((movie, idx) => <Card key={movie.title + idx} dataMovie={movie}/>)}  
             </section>
         </main>
