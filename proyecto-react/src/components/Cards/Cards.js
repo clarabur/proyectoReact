@@ -7,7 +7,7 @@ class Cards extends Component {
     constructor(){
         super()
         this.state ={
-            movies:''
+            movies:[]
         }
     }
     componentDidMount(){
