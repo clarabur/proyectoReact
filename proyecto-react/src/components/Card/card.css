@@ -12,13 +12,14 @@
     display: none;
 }
 .card{
-    width: 23.75%;
-    height: 1100px;
-    justify-content: space-around;
-    
+
+    padding: 1px;
     margin-bottom: 1%;
-    background-color: rgb(243, 238, 227);
-   
+    width: 23.75%;
+    background-color: rgb(224, 222, 218);
+    border-radius: 5px;
+    box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
+    
 
     /* background-color: red; */
 }
@@ -85,11 +86,14 @@
 .description{
  text-align: justify;
  padding: 3%;
+ color: grey;
 
 }
 
 .titulo{
-    text-align: center
+    text-align: center;
+    color: black;
+    text-transform: uppercase;
 }
 .navigation{
     margin: 5%;
@@ -100,6 +104,7 @@
 }
 .aditional-info{
     padding-left: 3%;
+    color:grey;
    
 }
 .contenedorInfoColumn{
