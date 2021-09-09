@@ -7,7 +7,8 @@ class Card extends Component {
         super(props)
         this.state ={
             text: 'Ver más',
-            viewMore: false
+            viewMore: false,
+            sombra: false
         }
     }
    
@@ -24,11 +25,23 @@ class Card extends Component {
             })
         }
     }
+    sombreado(){
+       this.setState({
+           sombra: true
+       })
+       console.log(this.state.sombra)
+
+    }
+    normal(){
+        this.setState({
+            sombra: false
+        })
+    }
 
     render(){
         return(
 
-            <article className='card'>
+            <article className={`card ${this.state.sombra? 'sombraCard' : ' '}  `} onMouseOver={()=>this.sombreado()} onMouseOut={()=>this.normal()} >
             <section className="navigation">
                 <div>
                     <i className="fas fa-chevron-left"></i>

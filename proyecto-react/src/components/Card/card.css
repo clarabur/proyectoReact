@@ -13,14 +13,17 @@
 }
 .card{
     width: 23.75%;
-    height: 1000px;
-justify-content: space-around;
-
-margin-bottom: 1%;
-   background-color: rgb(243, 238, 227);
-
+    height: 1100px;
+    justify-content: space-around;
+    
+    margin-bottom: 1%;
+    background-color: rgb(243, 238, 227);
+   
 
     /* background-color: red; */
+}
+.sombraCard{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 /* .imagen-info{
     display: flex;
@@ -44,6 +47,7 @@ margin-bottom: 1%;
     align-content: center;
     justify-content: center;
     background-color: red;
+   
     
 }
 .description{
@@ -57,4 +61,8 @@ margin-bottom: 1%;
 }
 .navigation{
     margin: 5%;
+}
+.aditional-info{
+    padding-left: 3%;
+   
 }
