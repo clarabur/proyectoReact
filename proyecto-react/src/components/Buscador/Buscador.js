@@ -14,7 +14,7 @@ class Buscador extends Component{
         this.setState({
             valor: event.target.value
             },
-            ()=>this.props.buscadorMovies(this.state.valor)
+            ()=>this.props.buscarMovies(this.state.valor)
 
         )
        

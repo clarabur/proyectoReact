@@ -8,7 +8,8 @@ class Cards extends Component {
     constructor(){
         super()
         this.state ={
-            movies:[]
+            movies:[],
+            moviesIniciales:[]
         }
     }
     componentDidMount(){
@@ -18,14 +19,16 @@ class Cards extends Component {
         .then(data =>{
             console.log(data)
             this.setState({
-                movies: data.results
+                movies: data.results,
+                moviesIniciales: data.results
+
             })
             
         })
         .catch(error => console.log(error))
     }
     buscarMovies(textoBuscador){
-        let moviesBuscadas= this.state.movies.filter(movie => movie.title.toLowerCase().includes(textoBuscador.toLowerCase()))
+        let moviesBuscadas= this.state.moviesIniciales.filter(movie => movie.title.toLowerCase().includes(textoBuscador.toLowerCase()));
         this.setState({
             movies: moviesBuscadas
         })
@@ -42,7 +45,7 @@ class Cards extends Component {
         return(
 
         <main>
-            <Buscador buscadorMovies={(textoBuscador)=>this.buscarMovies(textoBuscador)} />
+            <Buscador buscarMovies={(textoBuscador)=>this.buscarMovies(textoBuscador)} />
             <button type="button">Cargar más tarjetas</button>
             <section className="card-container">
                 {this.state.movies.map((movie, idx) => <Card key={movie.title + idx} dataMovie={movie} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)}/>)}  
