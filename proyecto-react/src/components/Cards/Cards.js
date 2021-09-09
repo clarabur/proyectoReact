@@ -18,6 +18,8 @@ class Cards extends Component {
             console.log(data)
             this.setState({
                 movies: data.results
+
+                
             })
             
         })
