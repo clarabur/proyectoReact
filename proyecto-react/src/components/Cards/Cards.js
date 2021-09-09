@@ -13,6 +13,8 @@ class Cards extends Component {
             moviesIniciales:[],
             isLoaded: false,
             nextUrl: '',
+            columna: false,
+            distribucion: true
 
         }
     }
@@ -62,18 +64,35 @@ addMore(){
             movies: peliculasQueQuedan
         })
     }
+    columnas(){
+        if(this.state.columna){
+            this.setState({
+                columna: false,
+                distribucion: true
+            })
+
+        }else{
+            this.setState({
+                columna: true,
+                distribucion:false
+            })
+        }
+       
+    }
     render(){
         return(
 
         <main>
             <Buscador buscarMovies={(textoBuscador)=>this.buscarMovies(textoBuscador)} />
-            
-            <section className="card-container">
+            <p>Ordenar ASC/ DESC</p>
+            <i className="fas fa-th" onClick={()=>this.columnas()} ></i>
+            <i className="fas fa-align-justify"></i>
+            <section className={` ${this.state.columna? 'columns' : 'card-container' }  `}>
                 {
 
                 this.state.isLoaded === false ? <p> Cargando....</p> :
 
-                this.state.movies.map((movie, idx) => <Card key={movie.title + idx} dataMovie={movie} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)}/>)
+                this.state.movies.map((movie, idx) => <Card valor={this.state.distribucion} key={movie.title + idx} dataMovie={movie} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)}/>)
                 
                 }  
             </section>

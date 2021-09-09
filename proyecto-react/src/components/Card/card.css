@@ -23,6 +23,14 @@
 
     /* background-color: red; */
 }
+.cardColumn{
+   
+    width: 98%;
+   margin: auto;
+    height: 500px;
+    margin-bottom: 1%;
+    background-color: rgb(243, 238, 227);
+}
 .sombraCard{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
@@ -36,10 +44,29 @@
     align-content: center;
     justify-content: center;
 }
+.imagenColumn{
+    height: 400px;
+    width: 90%;
+    margin: auto;
+    display: flex;
+    
+}
+.contenedor-imagenColumn{
+    width: 30%;
+    height: 400px;
+    margin: auto;
+   
+    
+}
 .imagenes{
     height: 400px;
    width: 90%;
    margin: 1%;
+}
+.imagenesColumna{
+    height: 400px;
+    width: 100%;
+  
 }
 .contendedor-info{
     width: 100%;
@@ -66,8 +93,15 @@
 .navigation{
     margin: 5%;
 }
+.navigationColumn{
+    margin-left: 1%;
+    margin-top: 1%;
+}
 .aditional-info{
     padding-left: 3%;
     color:grey;
    
+}
+.contenedorInfoColumn{
+    width: 40%;
 }
