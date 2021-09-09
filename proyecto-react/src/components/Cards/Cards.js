@@ -12,6 +12,7 @@ class Cards extends Component {
             movies:[],
             moviesIniciales:[],
             isLoaded: false,
+            nextUrl: '',
 
         }
     }
@@ -25,12 +26,28 @@ class Cards extends Component {
                 movies: data.results,
                 moviesIniciales: data.results,
                 isLoaded: true,
+                nextUrl: "https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=2",
 
             })
             
         })
         .catch(error => console.log(error))
     }
+addMore(){
+    let url= this.state.nextUrl
+    fetch(url)
+    .then (Response => Response.json())
+    .then (data => {
+        console.log(data)
+        this.setState({
+            movies: this.state.movies.concat(data.results),
+            nextUrl: "https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=3"
+        })
+    })
+    .catch (error => console.log (error))
+}
+
+
     buscarMovies(textoBuscador){
         let moviesBuscadas= this.state.moviesIniciales.filter(movie => movie.title.toLowerCase().includes(textoBuscador.toLowerCase()));
         this.setState({
@@ -50,7 +67,7 @@ class Cards extends Component {
 
         <main>
             <Buscador buscarMovies={(textoBuscador)=>this.buscarMovies(textoBuscador)} />
-            <button type="button">Cargar más tarjetas</button>
+            
             <section className="card-container">
                 {
 
@@ -60,6 +77,7 @@ class Cards extends Component {
                 
                 }  
             </section>
+            <button onClick ={()=> this.addMore()}> Cargar más películas </button>
         </main>
 
 
