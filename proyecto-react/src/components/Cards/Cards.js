@@ -77,7 +77,7 @@ addMore(){
                 
                 }  
             </section>
-            <button onClick ={()=> this.addMore()}> Cargar más películas </button>
+            <button type="button" onClick ={()=> this.addMore()}> Cargar más películas </button>
         </main>
 
 
