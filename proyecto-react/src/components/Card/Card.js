@@ -34,7 +34,7 @@ class Card extends Component {
                     <i className="fas fa-chevron-left"></i>
                     <i className="fas fa-chevron-right"></i>
                 </div>
-                <i className="far fa-window-close"></i>
+                <i className="far fa-window-close" onClick={() => this.props.remove(this.props.dataMovie.id)}></i>
             </section>
             <main>
                 <img className="imagenes" src={`https://image.tmdb.org/t/p/w342${this.props.dataMovie.poster_path}`} alt=""/>
@@ -46,7 +46,6 @@ class Card extends Component {
                     <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>Lenguaje original: {this.props.dataMovie.original_language}</p>
                     <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>Popularidad: {this.props.dataMovie.popularity}</p>
                     <p className='more' onClick={() => this.viewMore()}>{this.state.text}</p>
-                    <p className='more' onClick={() => this.props.remove(this.props.dataMovie.id)}>Borrar</p>
                 </section>
             </main>
         </article>
