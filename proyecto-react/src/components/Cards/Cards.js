@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import Card from '../Card/Card'
+import Buscador from '../Buscador/Buscador'
 
 
 class Cards extends Component {
@@ -25,14 +26,28 @@ class Cards extends Component {
         })
         .catch(error => console.log(error))
     }
+    buscarMovies(textoBuscador){
+        let moviesBuscadas= this.state.movies.filter(movie => movie.title.toLowerCase().includes(textoBuscador.toLowerCase()))
+        this.setState({
+            movies: moviesBuscadas
+        })
 
+    }
+
+    deleteCard(peliculaABorrar){
+        let peliculasQueQuedan = this.state.movies.filter( movie => movie.id !== peliculaABorrar);
+        this.setState({
+            movies: peliculasQueQuedan
+        })
+    }
     render(){
         return(
 
-            <main>
+        <main>
+            <Buscador buscadorMovies={(textoBuscador)=>this.buscarMovies(textoBuscador)} />
             <button type="button">Cargar más tarjetas</button>
             <section className="card-container">
-                {this.state.movies.map((movie, idx) => <Card key={movie.title + idx} dataMovie={movie}/>)}  
+                {this.state.movies.map((movie, idx) => <Card key={movie.title + idx} dataMovie={movie} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)}/>)}  
             </section>
         </main>
 
