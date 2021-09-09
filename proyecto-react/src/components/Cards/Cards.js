@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import Card from '../Card/Card'
 import Buscador from '../Buscador/Buscador'
+import './cards.css'
 
 
 class Cards extends Component {
