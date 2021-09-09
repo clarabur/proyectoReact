@@ -4,7 +4,8 @@ class Buscador extends Component{
     constructor(){
         super()
         this.state = {
-            valor: ''
+            valor: '',
+           
         }
     }
     evitarSubmit(event){
@@ -19,12 +20,11 @@ class Buscador extends Component{
         )
        
     }
+    
     render(){
         return(
             <section>
-            <p>Ordenar ASC/ DESC</p>
-            <i className="fas fa-th"></i>
-            <i className="fas fa-align-justify"></i>
+            
        
    
             <form onSubmit={(event)=>this.evitarSubmit(event)} action="">

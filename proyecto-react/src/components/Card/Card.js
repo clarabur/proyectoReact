@@ -41,19 +41,19 @@ class Card extends Component {
     render(){
         return(
 
-            <article className={`card ${this.state.sombra? 'sombraCard' : ' '}  `} onMouseOver={()=>this.sombreado()} onMouseOut={()=>this.normal()} >
-            <section className="navigation">
+            <article className={` ${this.state.sombra? 'sombraCard' : ' '} ${this.props.valor? 'card' : 'cardColumn'}  `} onMouseOver={()=>this.sombreado()} onMouseOut={()=>this.normal()} >
+            <section className={` ${this.props.valor?'navigation' : 'navigationColumn'}`}>
                 <div>
                     <i className="fas fa-chevron-left"></i>
                     <i className="fas fa-chevron-right"></i>
                 </div>
                 <i className="far fa-window-close" onClick={() => this.props.remove(this.props.dataMovie.id)}></i>
             </section>
-            <main className='imagen-info'>
-                <div className='contenedor-imagen'>
-                    <img className="imagenes" src={`https://image.tmdb.org/t/p/w342${this.props.dataMovie.poster_path}`} alt=""/>
+            <main className={` ${this.props.valor?'imagen-info' : 'imagenColumn'}`}>
+                <div className={` ${this.props.valor?'contenedor-imagen' : 'contenedor-imagenColumn'}`}>
+                    <img className={` ${this.props.valor?'imagenes' : 'imagenesColumna'}`} src={`https://image.tmdb.org/t/p/w342${this.props.dataMovie.poster_path}`} alt=""/>
                 </div>
-                <div className='contenedor-info'>
+                <div className={` ${this.props.valor?'contenedor-info' : 'contenedorInfoColumn'}`}>
                     <h3 className='titulo'>{this.props.dataMovie.title}</h3>
                     <p className="description">{this.props.dataMovie.overview}</p>
                     <section className="aditional-info">
