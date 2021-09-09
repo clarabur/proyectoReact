@@ -12,9 +12,14 @@
     display: none;
 }
 .card{
-    width: 22%;
-    height: 800px;
-    margin: 1%;
+    width: 23.75%;
+    height: 1000px;
+justify-content: space-around;
+
+margin-bottom: 1%;
+   background-color: rgb(243, 238, 227);
+
+
     /* background-color: red; */
 }
 /* .imagen-info{
@@ -29,6 +34,8 @@
 }
 .imagenes{
     height: 400px;
+   width: 90%;
+   margin: 1%;
 }
 .contendedor-info{
     width: 100%;
@@ -37,4 +44,17 @@
     align-content: center;
     justify-content: center;
     background-color: red;
+    
+}
+.description{
+ text-align: justify;
+ padding: 3%;
+
+}
+
+.titulo{
+    text-align: center
+}
+.navigation{
+    margin: 5%;
 }

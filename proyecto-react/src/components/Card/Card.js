@@ -41,7 +41,7 @@ class Card extends Component {
                     <img className="imagenes" src={`https://image.tmdb.org/t/p/w342${this.props.dataMovie.poster_path}`} alt=""/>
                 </div>
                 <div className='contenedor-info'>
-                    <h3>{this.props.dataMovie.title}</h3>
+                    <h3 className='titulo'>{this.props.dataMovie.title}</h3>
                     <p className="description">{this.props.dataMovie.overview}</p>
                     <section className="aditional-info">
                         <p className={`extra ${this.state.viewMore ? 'show' : 'hide'}`}>Fecha de lanzamiento: {this.props.dataMovie.release_date}</p>
