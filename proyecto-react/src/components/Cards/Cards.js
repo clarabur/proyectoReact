@@ -87,16 +87,21 @@ addMore(){
             <p>Ordenar ASC/ DESC</p>
             <i className="fas fa-th" onClick={()=>this.columnas()} ></i>
             <i className="fas fa-align-justify"></i>
+            
+         {this.state.movies == "" ? <div className="noresults"><i class="fas fa-search icon"></i><p className="noresultsP">No hay Películas que coincidan con tu búsqueda</p></div> : <p></p> }
+            
             <section className={` ${this.state.columna? 'columns' : 'card-container' }  `}>
-                {
-
+                
+                { 
                 this.state.isLoaded === false ? <p> Cargando....</p> :
 
                 this.state.movies.map((movie, idx) => <Card valor={this.state.distribucion} key={movie.title + idx} dataMovie={movie} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)}/>)
                 
-                }  
+                }
             </section>
-            <button type="button" onClick ={()=> this.addMore()}> Cargar más películas </button>
+            {this.state.movies == "" ? <p></p>: <button type="button" onClick ={()=> this.addMore()}> Cargar más películas </button>
+          }
+            
         </main>
 
 
