@@ -1,11 +1,11 @@
 .formContainer{
     display: flex;
     background-color: white;
-    border: 0.5px solid lightgrey;
+    border: 0.2px solid lightgrey;
     height: 60px;
-    width: 80%;
+    width: 50%;
     margin: auto;
-    justify-content: center;
+    
 }
 .input{
     border: none;
@@ -16,7 +16,7 @@
     text-align: center;
 }
 .inputDiv{
-    width: 95%;
+    width: 90%;
     background-color: white;
     
 
@@ -34,7 +34,7 @@
     text-align: center ;
 }
 .contenedorBoton{
-    
+    justify-content: center;
     width: 5%;
     border-left: 1px solid lightgrey;
 }
