@@ -22,7 +22,7 @@ class Card extends Component {
                 <i className="far fa-window-close"></i>
             </section>
             <main>
-                <img className="imagenes" src={`https://image.tmdb.org/t/p/w500${this.props.dataMovie.poster_path}`} alt=""/>
+                <img className="imagenes" src={`https://image.tmdb.org/t/p/w342${this.props.dataMovie.poster_path}`} alt=""/>
                 <h3>{this.props.dataMovie.title}</h3>
                 <p className="description">{this.props.dataMovie.overview}</p>
                 <section className="aditional-info">
