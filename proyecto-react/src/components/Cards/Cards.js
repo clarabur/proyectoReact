@@ -23,14 +23,19 @@ class Cards extends Component {
         })
         .catch(error => console.log(error))
     }
-
+    deleteCard(peliculaABorrar){
+        let peliculasQueQuedan = this.state.movies.filter( movie => movie.id !== peliculaABorrar);
+        this.setState({
+            movies: peliculasQueQuedan
+        })
+    }
     render(){
         return(
 
             <main>
             <button type="button">Cargar más tarjetas</button>
             <section className="card-container">
-                {this.state.movies.map((movie, idx) => <Card key={movie.title + idx} dataMovie={movie}/>)}  
+                {this.state.movies.map((movie, idx) => <Card key={movie.title + idx} dataMovie={movie} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)}/>)}  
             </section>
         </main>
 
