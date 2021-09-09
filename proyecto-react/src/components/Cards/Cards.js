@@ -10,7 +10,9 @@ class Cards extends Component {
         super()
         this.state ={
             movies:[],
-            moviesIniciales:[]
+            moviesIniciales:[],
+            isLoaded: false,
+
         }
     }
     componentDidMount(){
@@ -21,7 +23,8 @@ class Cards extends Component {
             console.log(data)
             this.setState({
                 movies: data.results,
-                moviesIniciales: data.results
+                moviesIniciales: data.results,
+                isLoaded: true,
 
             })
             
@@ -49,7 +52,13 @@ class Cards extends Component {
             <Buscador buscarMovies={(textoBuscador)=>this.buscarMovies(textoBuscador)} />
             <button type="button">Cargar más tarjetas</button>
             <section className="card-container">
-                {this.state.movies.map((movie, idx) => <Card key={movie.title + idx} dataMovie={movie} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)}/>)}  
+                {
+
+                this.state.isLoaded === false ? <p> Cargando....</p> :
+
+                this.state.movies.map((movie, idx) => <Card key={movie.title + idx} dataMovie={movie} remove={(peliculaABorrar) => this.deleteCard(peliculaABorrar)}/>)
+                
+                }  
             </section>
         </main>
 
