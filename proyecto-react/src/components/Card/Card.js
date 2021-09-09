@@ -8,7 +8,8 @@ class Card extends Component {
         this.state ={
             text: 'Ver más',
             viewMore: false,
-            sombra: false
+            sombra: false,
+            zoom: false,
         }
     }
    
@@ -37,6 +38,18 @@ class Card extends Component {
             sombra: false
         })
     }
+    zoom(){
+        this.setState({
+            zoom: true
+        })
+        
+ 
+     }
+     zoomOut(){
+         this.setState({
+             zoom: false
+         })
+     }
 
     render(){
         return(
@@ -50,7 +63,7 @@ class Card extends Component {
                 <i className="far fa-window-close" onClick={() => this.props.remove(this.props.dataMovie.id)}></i>
             </section>
             <main className={` ${this.props.valor?'imagen-info' : 'imagenColumn'}`}>
-                <div className={` ${this.props.valor?'contenedor-imagen' : 'contenedor-imagenColumn'}`}>
+                <div onMouseOut={()=>this.zoomOut()} onMouseOver={()=>this.zoom()} className={` ${this.props.valor?'contenedor-imagen' : 'contenedor-imagenColumn'} ${this.state.zoom ? 'zoomImage' : ''}`}>
                     <img className={` ${this.props.valor?'imagenes' : 'imagenesColumna'}`} src={`https://image.tmdb.org/t/p/w342${this.props.dataMovie.poster_path}`} alt=""/>
                 </div>
                 <div className={` ${this.props.valor?'contenedor-info' : 'contenedorInfoColumn'}`}>
