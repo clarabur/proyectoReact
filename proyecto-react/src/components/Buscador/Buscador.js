@@ -1,4 +1,5 @@
 import React, {Component} from 'react'
+import "./buscador.css"
 
 class Buscador extends Component{
     constructor(){
@@ -23,13 +24,13 @@ class Buscador extends Component{
     
     render(){
         return(
-            <section>
+            <section className="sectionBuscador">
             
        
    
-            <form onSubmit={(event)=>this.evitarSubmit(event)} action="">
-                <input type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} name="search" id="search" placeholder="Buscar Pelicula"/>
-                <button type="submit"><i className="fas fa-search"></i></button>
+            <form className="formContainer" onSubmit={(event)=>this.evitarSubmit(event)} action="">
+                <div className="inputDiv"><input className="input" type="text" onChange={(event)=>this.controlarCambios(event)} value={this.state.valor} name="search" id="search" placeholder="Buscar película popular por título"/></div>
+                <div className="contenedorBoton"><button className="boton" type="submit"><i className="fas fa-search icono"></i></button></div>
             </form>
             </section>
         )
