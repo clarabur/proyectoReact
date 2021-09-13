@@ -113,3 +113,14 @@
 .more {
     color: black;
 }
+.botonesArribaTarjeta{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+   
+}
+.eliminarr{
+    
+    margin-left: 84%;
+}
