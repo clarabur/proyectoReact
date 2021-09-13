@@ -32,7 +32,9 @@
 }
 .contenedorBoton{
     justify-content: center;
-    width: 5%;
+    width: 10%;
     border-left: 1px solid lightgrey;
     border-radius: 5px;
+    display: flex;
+    align-content: center;
 }
