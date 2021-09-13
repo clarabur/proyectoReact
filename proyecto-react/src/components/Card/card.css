@@ -12,27 +12,21 @@
     display: none;
 }
 .card{
-
     padding: 1px;
     margin-bottom: 1%;
     width: 23.75%;
     background-color: rgb(224, 222, 218);
     border-radius: 5px;
     box-shadow: 0 .15rem 1.75rem 0 rgba(58,59,69,.15);
-    
-
-    /* background-color: red; */
 }
 .cardColumn{
-   
     width: 98%;
-   margin: auto;
+    margin: auto;
     height: 500px;
     margin-bottom: 1%;
     background-color: rgb(243, 238, 227);
 }
 .sombraCard{
-    
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 .zoomImage{
@@ -53,24 +47,20 @@
     width: 90%;
     margin: auto;
     display: flex;
-    
 }
 .contenedor-imagenColumn{
     width: 30%;
     height: 400px;
     margin: auto;
-   
-    
 }
 .imagenes{
     height: 400px;
-   width: 90%;
-   margin: 1%;
+    width: 90%;
+    margin: 1%;
 }
 .imagenesColumna{
     height: 400px;
     width: 100%;
-  
 }
 .contendedor-info{
     width: 100%;
@@ -78,18 +68,12 @@
     display: flex;
     align-content: center;
     justify-content: center;
-   
-    
-   
-    
 }
 .description{
- text-align: justify;
- padding: 3%;
- color: grey;
-
+    text-align: justify;
+    padding: 3%;
+    color: grey;
 }
-
 .titulo{
     text-align: center;
     color: black;
@@ -105,11 +89,21 @@
 .aditional-info{
     padding-left: 3%;
     color:grey;
-   
 }
 .contenedorInfoColumn{
     width: 46%;
 }
 .more {
     color: black;
+}
+.botonesArribaTarjeta{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    
+   
+}
+.eliminarr{
+    
+    margin-left: 84%;
 }

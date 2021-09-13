@@ -56,11 +56,12 @@ class Card extends Component {
 
             <article className={` ${this.state.sombra? 'sombraCard' : ' '} ${this.props.valor? 'card' : 'cardColumn'}  `} onMouseOver={()=>this.sombreado()} onMouseOut={()=>this.normal()} >
             <section className={` ${this.props.valor?'navigation' : 'navigationColumn'}`}>
-                <div>
+                <div className='botonesArribaTarjeta'>
                     <i className="fas fa-chevron-left"></i>
                     <i className="fas fa-chevron-right"></i>
+                    <i className="far fa-window-close eliminarr" onClick={() => this.props.remove(this.props.dataMovie.id)}></i>
                 </div>
-                <i className="far fa-window-close" onClick={() => this.props.remove(this.props.dataMovie.id)}></i>
+                
             </section>
             <main className={` ${this.props.valor?'imagen-info' : 'imagenColumn'}`}>
                 <div onMouseOut={()=>this.zoomOut()} onMouseOver={()=>this.zoom()} className={` ${this.props.valor?'contenedor-imagen' : 'contenedor-imagenColumn'} ${this.state.zoom ? 'zoomImage' : ''}`}>
