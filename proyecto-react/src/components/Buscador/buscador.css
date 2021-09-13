@@ -21,16 +21,15 @@
     
 
 }
-.boton{
+.botons{
     text-decoration: none;
     background-color: white;
     border: 0;
 }
-.icono{
+.iconos{
     font-size: x-large;
    color: lightgrey;
-   margin-top: 25%;
-   margin-left: 25%;
+  
     text-align: center ;
 }
 .contenedorBoton{
