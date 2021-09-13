@@ -5,7 +5,7 @@
     height: 60px;
     width: 50%;
     margin: auto;
-    
+    border-radius: 5px;
 }
 .input{
     border: none;
@@ -18,8 +18,7 @@
 .inputDiv{
     width: 90%;
     background-color: white;
-    
-
+    border-radius: 5px;
 }
 .botons{
     text-decoration: none;
@@ -28,12 +27,12 @@
 }
 .iconos{
     font-size: x-large;
-   color: lightgrey;
-  
+    color: lightgrey;
     text-align: center ;
 }
 .contenedorBoton{
     justify-content: center;
     width: 5%;
     border-left: 1px solid lightgrey;
+    border-radius: 5px;
 }
