@@ -88,11 +88,15 @@ addMore(){
         
 
     }
+    ordenar(){
+        
+    }
     render(){
         return(
 
         <main>
             <Buscador buscarMovies={(textoBuscador)=>this.buscarMovies(textoBuscador)} />
+            <p onClick={()=>this.ordenar()}>Ordenar ASC/ DESC</p>
            <div className='boton'>
            <i  className="fas fa-th" onClick={()=>this.columnas()} ></i>
             <i className="fas fa-align-justify" onClick={()=>this.row()}></i>
