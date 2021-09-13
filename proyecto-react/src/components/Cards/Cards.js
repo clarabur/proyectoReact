@@ -12,7 +12,7 @@ class Cards extends Component {
             movies:[],
             moviesIniciales:[],
             isLoaded: false,
-            nextUrl: '',
+           
             valor: 1,
             columna: false,
             distribucion: true
@@ -31,7 +31,7 @@ class Cards extends Component {
                 isLoaded: true,
                valor: data.page + 1,
 
-                nextUrl:`https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=`
+              
 
             })
             
@@ -39,7 +39,8 @@ class Cards extends Component {
         .catch(error => console.log(error))
     }
 addMore(){
-    let url= this.state.nextUrl + this.state.valor
+    let url=  `https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=${this.state.valor}`
+
     fetch(url)
     .then (Response => Response.json())
     .then (data => {
@@ -47,8 +48,7 @@ addMore(){
         this.setState({
             movies: this.state.movies.concat(data.results),
             valor: data.page + 1,
-            nextUrl: `https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=${this.state.valor}`
-
+           
         })
     })
     .catch (error => console.log (error))
