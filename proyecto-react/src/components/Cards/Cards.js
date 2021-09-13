@@ -89,9 +89,11 @@ addMore(){
 
         <main>
             <Buscador buscarMovies={(textoBuscador)=>this.buscarMovies(textoBuscador)} />
-            <p>Ordenar ASC/ DESC</p>
-            <i className="fas fa-th" onClick={()=>this.columnas()} ></i>
+           <div className='boton'>
+           <i  className="fas fa-th" onClick={()=>this.columnas()} ></i>
             <i className="fas fa-align-justify"></i>
+           </div>
+            
             
          {this.state.movies == "" ? <div className="noresults"><i class="fas fa-search icon"></i><p className="noresultsP">No hay Películas que coincidan con tu búsqueda</p></div> : <p></p> }
             
