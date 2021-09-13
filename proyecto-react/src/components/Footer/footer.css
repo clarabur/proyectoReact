@@ -1,0 +1,17 @@
+.team{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+   
+    height: 50px;
+    background-color: rgb(224, 222, 218);
+    align-content: center;
+    justify-content: space-around;
+}
+li {
+   list-style: none;
+}
+.cadaTeam{
+    width: 30%;
+    
+}
