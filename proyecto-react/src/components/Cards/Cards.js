@@ -47,6 +47,7 @@ addMore(){
         this.setState({
             movies: this.state.movies.concat(data.results),
             valor: data.page + 1,
+            moviesIniciales: this.state.movies.concat(data.results),
             nextUrl: `https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=${this.state.valor}`
 
         })
