@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
-   
+    padding-left: 0;
     height: 50px;
     background-color: rgb(224, 222, 218);
     align-content: center;
@@ -13,5 +13,5 @@ li {
 }
 .cadaTeam{
     width: 30%;
-    
+    text-align: center;
 }

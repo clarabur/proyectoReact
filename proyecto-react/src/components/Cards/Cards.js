@@ -110,7 +110,7 @@ addMore(){
                 
                 }
             </section>
-            {this.state.movies == "" ? <p></p>: <button type="button" onClick ={()=> this.addMore()}> Cargar más películas </button>
+            {this.state.movies == "" ? <p></p>: <button className='cargarMas' type="button" onClick ={()=> this.addMore()}> Cargar más películas </button>
           }
             
         </main>
