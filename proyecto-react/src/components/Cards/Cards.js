@@ -70,19 +70,23 @@ addMore(){
         })
     }
     columnas(){
-        if(this.state.columna){
+        
             this.setState({
                 columna: false,
                 distribucion: true
             })
 
-        }else{
+        
+       
+    }
+    row(){
+        
             this.setState({
                 columna: true,
-                distribucion:false
+                distribucion: false
             })
-        }
-       
+        
+
     }
     render(){
         return(
@@ -91,7 +95,7 @@ addMore(){
             <Buscador buscarMovies={(textoBuscador)=>this.buscarMovies(textoBuscador)} />
            <div className='boton'>
            <i  className="fas fa-th" onClick={()=>this.columnas()} ></i>
-            <i className="fas fa-align-justify"></i>
+            <i className="fas fa-align-justify" onClick={()=>this.row()}></i>
            </div>
             
             

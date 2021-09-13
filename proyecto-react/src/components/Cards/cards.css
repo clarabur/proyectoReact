@@ -28,26 +28,23 @@
     text-decoration: underline;
     size: 20px;
     width: 60%;
-   
     font-size: xx-large;
     margin-top: auto;
-    
 }
 .icon{
-  
     width: 30%;
     font-size: 100px;
-   text-align: center;
-   margin-top: auto;
+    text-align: center;
+    margin-top: auto;
 }
 .boton{
-display: flex;
-flex-wrap: wrap;
-flex-direction: row;
-align-content: space-around;
-justify-content: space-around;
-width: 5%;
-margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-around;
+    width: 5%;
+    margin-top: 40px;
 }
 .cargarMas{
     color: #0099CC;
