@@ -108,5 +108,8 @@
    
 }
 .contenedorInfoColumn{
-    width: 40%;
+    width: 46%;
+}
+.more {
+    color: black;
 }
