@@ -13,14 +13,14 @@ class Cards extends Component {
             moviesIniciales:[],
             isLoaded: false,
            
-            valor: 1,
+            valor: '',
             columna: false,
             distribucion: true
 
         }
     }
     componentDidMount(){
-        let url = `https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=${this.state.valor}`
+        let url = `https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=1`
         fetch(url)
         .then(response => response.json())
         .then(data =>{
