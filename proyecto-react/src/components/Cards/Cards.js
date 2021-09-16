@@ -71,23 +71,16 @@ addMore(){
         })
     }
     columnas(){
-        
             this.setState({
                 columna: false,
                 distribucion: true
-            })
-
-        
-       
+            })   
     }
     row(){
-        
             this.setState({
                 columna: true,
                 distribucion: false
             })
-        
-
     }
     ordenar(){
         console.log("ordenar")
