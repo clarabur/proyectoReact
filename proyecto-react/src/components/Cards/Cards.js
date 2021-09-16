@@ -106,7 +106,13 @@ addMore(){
             order: "asc",
             movies: moviesOrdenadas
         })}
-        
+        if (this.state.order === 'asc'){
+            let moviesOrdenadas = this.state.movies.reverse();
+            this.setState ({
+                order: 'desc',
+                movies: moviesOrdenadas
+            })
+        }
         
     }
     render(){
