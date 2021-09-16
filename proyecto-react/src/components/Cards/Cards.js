@@ -15,7 +15,8 @@ class Cards extends Component {
             nextUrl: '',
             valor: 1,
             columna: false,
-            distribucion: true
+            distribucion: true,
+            order: false
 
         }
     }
@@ -90,6 +91,23 @@ addMore(){
 
     }
     ordenar(){
+        console.log("ordenar")
+        let moviesOrdenadas = []
+        if (this.state.order === false || this.state.order === "desc"){
+        moviesOrdenadas =  this.state.movies.sort(function (a,b){
+            if (a.title > b.title){
+                return 1
+            }
+            if (a.title <b.title){
+                return -1
+            }
+            return 0
+        })
+        this.setState({
+            order: "asc",
+            movies: moviesOrdenadas
+        })}
+        
         
     }
     render(){
