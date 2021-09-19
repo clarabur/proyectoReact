@@ -49,6 +49,7 @@ addMore(){
         this.setState({
             movies: this.state.movies.concat(data.results),
             valor: data.page + 1,
+            moviesIniciales: this.state.moviesIniciales.concat(data.results)
            
         })
     })
