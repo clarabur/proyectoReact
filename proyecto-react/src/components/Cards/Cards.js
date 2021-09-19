@@ -37,8 +37,24 @@ class Cards extends Component {
         .catch(error => console.log(error))
     }
 
+<<<<<<< HEAD
     addMore(){
         let url=  `https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=${this.state.valor}`
+=======
+    fetch(url)
+    .then (Response => Response.json())
+    .then (data => {
+        console.log(data)
+        this.setState({
+            movies: this.state.movies.concat(data.results),
+            valor: data.page + 1,
+            moviesIniciales: this.state.moviesIniciales.concat(data.results)
+           
+        })
+    })
+    .catch (error => console.log (error))
+}
+>>>>>>> e9706ec8e0864d306139e382c5568a4257dff24e
 
         fetch(url)
         .then (Response => Response.json())
