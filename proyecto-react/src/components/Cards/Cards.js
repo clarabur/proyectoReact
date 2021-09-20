@@ -12,16 +12,16 @@ class Cards extends Component {
             movies:[],
             moviesIniciales:[],
             isLoaded: false,
-           
             valor: '',
             columna: false,
             distribucion: true,
             order: false
-
         }
     }
+
     componentDidMount(){
         let url = `https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=1`
+        
         fetch(url)
         .then(response => response.json())
         .then(data =>{
@@ -31,37 +31,33 @@ class Cards extends Component {
                 moviesIniciales: data.results,
                 isLoaded: true,
                valor: data.page + 1,
-
-              
-
             })
             
         })
         .catch(error => console.log(error))
     }
-addMore(){
-    let url=  `https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=${this.state.valor}`
 
-    fetch(url)
-    .then (Response => Response.json())
-    .then (data => {
-        console.log(data)
-        this.setState({
-            movies: this.state.movies.concat(data.results),
-            valor: data.page + 1,
-           
+    addMore(){
+        let url=  `https://api.themoviedb.org/3/movie/popular?api_key=6137a481959516e193831c9b950f5155&language=es&page=${this.state.valor}`
+        
+        fetch(url)
+        .then (Response => Response.json())
+        .then (data => {
+            console.log(data)
+            this.setState({
+                movies: this.state.movies.concat(data.results),
+                valor: data.page + 1,
+                moviesIniciales: this.state.moviesIniciales.concat(data.results)
+            })
         })
-    })
-    .catch (error => console.log (error))
-}
-
+        .catch (error => console.log (error))
+    }
 
     buscarMovies(textoBuscador){
         let moviesBuscadas= this.state.moviesIniciales.filter(movie => movie.title.toLowerCase().includes(textoBuscador.toLowerCase()));
         this.setState({
             movies: moviesBuscadas
         })
-
     }
 
     deleteCard(peliculaABorrar){
@@ -70,18 +66,21 @@ addMore(){
             movies: peliculasQueQuedan
         })
     }
+
     columnas(){
             this.setState({
                 columna: false,
                 distribucion: true
             })   
     }
+
     row(){
             this.setState({
                 columna: true,
                 distribucion: false
             })
     }
+
     ordenar(){
         console.log("ordenar")
         let moviesOrdenadas = []
@@ -114,16 +113,15 @@ addMore(){
         <main>
             <Buscador buscarMovies={(textoBuscador)=>this.buscarMovies(textoBuscador)} />
             <p onClick={()=>this.ordenar()}>Ordenar ASC/ DESC</p>
-           <div className='boton'>
-           <i  className="fas fa-th" onClick={()=>this.columnas()} ></i>
-            <i className="fas fa-align-justify" onClick={()=>this.row()}></i>
-           </div>
+            <div className='boton'>
+                <i  className="fas fa-th" onClick={()=>this.columnas()} ></i>
+                <i className="fas fa-align-justify" onClick={()=>this.row()}></i>
+            </div>
             
             
-         {this.state.movies == "" ? <div className="noresults"><i class="fas fa-search icon"></i><p className="noresultsP">No hay Películas que coincidan con tu búsqueda</p></div> : <p></p> }
+            {this.state.movies == "" ? <div className="noresults"><i class="fas fa-search icon"></i><p className="noresultsP">No hay Películas que coincidan con tu búsqueda</p></div> : <p></p> }
             
             <section className={` ${this.state.columna? 'columns' : 'card-container' }  `}>
-                
                 { 
                 this.state.isLoaded === false ? <p> Cargando....</p> :
 
@@ -135,10 +133,7 @@ addMore(){
           }
             
         </main>
-
-
-
-
+        
         )
     }
 }
